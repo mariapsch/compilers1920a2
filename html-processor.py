@@ -14,7 +14,7 @@ for i in rexpsxolia.finditer(text):
     text = rexpsxolia.sub('', text)#Κάθε i που ταιριάζει αντικαθιστάται με κενό στο text
 
 #Ερώτημα 3
-rexp3 = re.compile(r'<script.*?</script>|<style.*?</style>', re.DOTALL)#Κανονική έκφραση για αναγνώριση οτιδήποτε ανάμεσα σε <script> και </script> ή <style> και </style>.Χρήση flag DOTALL για αναγνώριση και νέων γραμμών
+rexp3 = re.compile(r'<script.*?</script>|<style.*?</style>', re.DOTALL)#Κανονική έκφραση για αναγνώριση οτιδήποτε ανάμεσα σε <script> και </script> ή <style> και </style>.Χρήση του flag re.DOTALL για αναγνώριση και νέων γραμμών
 for i in rexp3.finditer(text):
     text = rexp3.sub('', text)#Κάθε i που ταιριάζει αντικαθίσταται με κενό στο text
 
@@ -24,7 +24,7 @@ for i in rexpsynd.finditer(text):
     text = rexpsynd.sub(i.group(1), text)#Στο text επιστρέφει μόνο ότι είναι ανάμεσα στα αυτάκια " "
 
 #Ερώτημα 5
-rexptag = re.compile(r'<.+?>', re.DOTALL)#Κανονική έκφραση για αναγνώριση το περιεχόμενο ανάμεσα σε < και >.Χρήση flag DOTALL για να αναγνωρίζει και την αλλαγή σειράς
+rexptag = re.compile(r'<.+?>', re.DOTALL)#Κανονική έκφραση για αναγνώριση το περιεχόμενο ανάμεσα σε < και >.Χρήση του flag re.DOTALL για να αναγνωρίζει και την αλλαγή σειράς
 for i in rexptag.finditer(text):
     text = rexptag.sub('', text)#Στο text ό,τι ταιριάζει αντικαθίσταται με κενό
 
