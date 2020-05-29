@@ -1,5 +1,5 @@
 import re
-#Άνοιγμα του αρχικού αρχείου testpage.txt και εναπόθεσή του στο string text
+#Άνοιγμα του αρχικού αρχείου testpage.txt και εναπόθεση του περιεχομένου του στο string text
 with open('testpage.txt', 'r', encoding = 'utf-8') as file: 
     text = file.read()
 
