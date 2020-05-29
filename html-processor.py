@@ -14,7 +14,7 @@ for i in rexpsxolia.finditer(text):
     text = rexpsxolia.sub('', text)#Κάθε i που ταιριάζει αντικαθιστάται με κενό στο text
 
 #Ερώτημα 3
-rexp3 = re.compile(r'<script.*?</script>|<style.*?</style>', re.DOTALL)#Κανονική έκφραση για αναγνώριση οτιδήποτε ανάμεσα σε <script> και </script> και <style> και </style>.Χρήση flag DOTALL για αναγνώριση και νέων γραμμών
+rexp3 = re.compile(r'<script.*?</script>|<style.*?</style>', re.DOTALL)#Κανονική έκφραση για αναγνώριση οτιδήποτε ανάμεσα σε <script> και </script> ή <style> και </style>.Χρήση flag DOTALL για αναγνώριση και νέων γραμμών
 for i in rexp3.finditer(text):
     text = rexp3.sub('', text)#Κάθε i που ταιριάζει αντικαθίσταται με κενό στο text
 
@@ -39,7 +39,7 @@ def cb(i):                 #Ορισμός callback συνάρτησης για 
 	elif (i.group(0)=='&nbsp;'):
 		return ' '
 
-rexpontothtwn = re.compile(r'(&amp;)|(&gt;)|(&lt;)|(&nbsp;)')#Κανονική έκφραση για την αναφνώριση των οντοτήτων &amp και &gt και &lt και &nbsp
+rexpontothtwn = re.compile(r'(&amp;)|(&gt;)|(&lt;)|(&nbsp;)')#Κανονική έκφραση για την αναφνώριση των οντοτήτων &amp ή &gt ή &lt ή &nbsp
 text = rexpontothtwn.sub(cb, text)#Στο text επιστρέφει ότι αντικαθιστά η cb στο text
 
 #Ερώτημα 7
